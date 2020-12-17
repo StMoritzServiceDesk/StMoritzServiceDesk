@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+  <!--  ----------------------------------------------------------------------  -->
+  <!--  NOTE: Please add the following <META> element to your page <HEAD>.      -->
+  <!--  If necessary, please modify the charset parameter to specify the        -->
+  <!--  character set of your HTML page.                                        -->
+  <!--  ----------------------------------------------------------------------  -->
+
+  <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<form action="https://cs124.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST"  onsubmit="showSuccss()"  id="ticketForm" target="hidden-form">
+    <h1>St. Moritz Service Desk</h1>
+
+<input type=hidden name="orgid" value="00D3J0000000QkM">
+<!--<input type=hidden name="retURL" value="http://">-->
+
+<!--  ----------------------------------------------------------------------  -->
+<!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
+<!--  these lines if you wish to test in debug mode.                          -->
+<!--  <input type="hidden" name="debug" value=1>                              -->
+<!--  <input type="hidden" name="debugEmail"                                  -->
+<!--  value="ankit.raj@extentia.com">                                         -->
+<!--  ----------------------------------------------------------------------  -->
+
+<section class="fields-wrapper">
+    <div class="input-group">
+      <label>Category<span class="required">*</span></label>
+      <select class="input-style"  id="categoryVal" name="00N3J000000gKNy" title="Category"  onchange="submitCategory()" required><option value="">--None--</option><option value="IT - General">IT - General</option>
+        <option value="IT - Laptops and PCs">IT - Laptops and PCs</option>
+        <option value="IT - Mobile Devices">IT - Mobile Devices</option>
+        <option value="IT - Software">IT - Software</option>
+        <option value="Operations - Software">Operations - Software</option>
+        <option value="Operations - Support">Operations - Support</option>
+      </select>
+    </div>
+    <div class="input-group">
+        <label>Office Location<span class="required">*</span></label>
+        <select class="input-style" id="00Nq0000003DAQX" name="00N3J000000gKOE" title="Office Location" required><option value="">--None--</option><option value="Atlanta - Georgia">Atlanta - Georgia</option>
+        <option value="Beverly Hills - California">Beverly Hills - California</option>
+        <option value="Boston - Massachustets">Boston - Massachusetts</option>
+		<option value="Chicago - Illinois">Chicago - Illinois</option>
+		<option value="Cleveland - Ohio">Cleveland - Ohio</option>
+		<option value="Columbus - Ohio">Columbus - Ohio</option>
+		<option value="Costa Mesa - California">Costa Mesa - California</option>
+		<option value="Dallas - Texas">Dallas - Texas</option>
+		<option value="DC/VA/MD - Virginia">DC/VA/MD - Virginia</option>
+		<option value="Erie - Pennsylvania">Erie - Pennsylvania</option>
+		<option value="Ft. Lauderdale - Florida">Ft. Lauderdale - Florida</option>
+		<option value="Ft. Myers - Florida">Ft. Myers - Florida</option>
+		<option value="Harrisburg - Pennsylvania">Harrisburg - Pennsylvania</option>
+		<option value="Honolulu - Hawaii">Honolulu - Hawaii</option>
+		<option value="Houston - Texas">Houston - Texas</option>
+		<option value="Johnstown - Pennsylvania">Johnstown - Pennsylvania</option>
+		<option value="Las Vegas - Nevada">Las Vegas - Nevada</option>
+		<option value="Manhattan - New York">Manhattan - New York</option>
+		<option value="Murphysboro - Illinois">Murphysboro - Illinois</option>
+		<option value="Orlando - Florida">Orlando - Florida</option>
+		<option value="Parkersburg - West Virginia">Parkersburg - West Virginia</option>
+		<option value="Philadelphia - Pennsylvania">Philadelphia - Pennsylvania</option>
+		<option value="Pittsburgh - Pennsylvania">Pittsburgh - Pennsylvania</option>
+		<option value="Poconos - Pennsylvania">Poconos - Pennsylvania</option>
+		<option value="Rahway - New Jersey">Rahway - New Jersey</option>
+		<option value="SOC - Pennsylvania">SOC - Pennsylvania</option>
+		<option value="State College - Pennsylvania">State College - Pennsylvania</option>
+		<option value="Tampa - Florida">Tampa - Florida</option>
+		<option value="West Palm Beach - Florida">West Palm Beach - Florida</option>
+		<option value="Youngstown - Ohio">Youngstown - Ohio</option>
+        </select>
+    </div>
+	<div class="input-group">
+        <label>Submitted By<span class="required">*</span></label>
+        <input class="input-style" id="00Nq0000003D9QC" maxlength="255" name="00N3J000000gKON" size="20" type="text" required/>
+    </div>
+    <div class="input-group">
+        <label>Submitted For<span class="required">*</span><div class="tooltip"><sup><span class="i-circle">i</span></sup><span class="tooltiptext">If you are submitting on behalf of someone</span></div></label>
+        <input class="input-style" id="00Nq0000003D9Q7" maxlength="255" name="00N3J000000gKOH" size="20" type="text" required/>
+        <label class="secondary-input"><input type="checkbox" id="sameAsCheck"> Same as Submitted By</label>
+    </div>
+    <div class="input-group">
+        <label for="email">Email<span class="required">*</span></label>
+        <input class="input-style" id="email" maxlength="80" name="email" size="20" type="email" oninvalid="this.setCustomValidity('Please Enter valid email')" oninput="setCustomValidity('')" required />
+    </div>
+    <div class="input-group">
+        <label for="email">Phone<span class="required">*</span></label>
+        <input class="input-style" id="phone" maxlength="40" name="phone" size="20" type="number" required />
+    </div>
+    <div class="input-group">
+        <label for="email">Subject<span class="required">*</span></label>
+        <input class="input-style" id="subject" maxlength="80" name="subject" size="20" type="text" required />
+    </div>
+	<div class="input-group">
+        <label for="email">Priority<span class="required">*</span></label>
+        <select class="input-style" id="priority" name="priority" required><option value="" >--None--</option><option value="High">High</option>
+            <option value="Medium">Medium</option>
+            <option value="Low">Low</option>
+        </select>
+    </div>
+    <div class="input-groups">
+        <label for="email">Description<span class="required">* </span></label>
+        <textarea class="input-style textarea"  name="description" required></textarea>
+    </div>
+    
+</section>
+<input type=hidden id="recordType" name="recordType" value="0123J0000008qFMQAY">
+
+
+<div class="button-wrap">
+    <input type="submit" name="submit" >
+</div>
+
+</form>
+
+<section class="alert-success">
+    The form is submitted successfully please check your email for additional communication about your request.
+    <IFRAME style="display:none" name="hidden-form"></IFRAME>
+  </section>
+
+<script>
+function submitCategory() {   
+    var categoryVal = document.getElementById("categoryVal").value;
+    if(categoryVal.startsWith("IT")){
+        document.getElementById("recordType").value = "0123J0000008qFMQAY";
+    }else if(categoryVal.startsWith("Operations")){
+        document.getElementById("recordType").value = "0123J0000008qFNQAY";
+    }
+}
+
+const sameAsCheck = document.getElementById('sameAsCheck')
+
+sameAsCheck.addEventListener('change', (event) => {
+  if (event.target.checked) {
+    document.getElementById("00Nq0000003D9Q7").value =  document.getElementById("00Nq0000003D9QC").value;
+  }
+})
+function showSuccss() {
+    document.getElementById('ticketForm').classList.add('submitted');
+}
+
+</script>
+
+</body>
+
+</html>
